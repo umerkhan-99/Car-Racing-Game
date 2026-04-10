@@ -1,0 +1,5 @@
+{
+  "appId": "com.umer.racinggame",
+  "appName": "Pro Racing",
+  "webDir": "npm install @capacitor/androidnpx cap add android"
+}
