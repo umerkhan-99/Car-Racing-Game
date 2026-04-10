@@ -1,0 +1,121 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { 
+    overflow: hidden; 
+    touch-action: none; 
+    background: #1a1a1a; 
+}
+
+.game-container {
+    height: 100vh;
+    width: 100%;
+    /* Grass Background */
+    background: #27ae60;
+    background-image: url('https://www.transparenttextures.com/patterns/grass.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.game-area {
+    width: 450px;
+    height: 100vh;
+    background: #2c3e50; /* Road Color */
+    position: relative;
+    overflow: hidden;
+    border-left: 8px solid #95a5a6;
+    border-right: 8px solid #95a5a6;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+.score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 12px 20px;
+    font-size: 22px;
+    color: #f1c40f;
+    z-index: 100;
+    border-radius: 10px;
+    border: 1px solid #f1c40f;
+    font-weight: bold;
+}
+
+.start-screen {
+    position: absolute;
+    z-index: 200;
+    background: #000;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid #e74c3c;
+    box-shadow: 0 0 25px #e74c3c;
+    width: 80%;
+    max-width: 300px;
+}
+
+.hide { display: none !important; }
+
+.lines {
+    width: 4px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+}
+
+.car, .enemy {
+    width: 50px;
+    height: 90px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 8px 4px rgba(0,0,0,0.4));
+}
+
+.car { background-image: url('car.png'); z-index: 10; }
+.enemy { background-image: url('car2.png'); }
+
+/* Enemy Color Variants */
+.blue-car { filter: hue-rotate(180deg); }
+.yellow-car { filter: hue-rotate(60deg); }
+.purple-car { filter: hue-rotate(280deg); }
+
+/* --- BOTTOM CONTROLS --- */
+.controls {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    gap: 15px;
+    z-index: 150;
+}
+
+.btn {
+    width: 65px;
+    height: 65px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 28px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.btn:active { 
+    background: #e74c3c; 
+    transform: scale(0.9); 
+}
+
+@media screen and (max-width: 500px) {
+    .game-area { width: 100vw; }
+    .btn { width: 60px; height: 60px; }
+}
